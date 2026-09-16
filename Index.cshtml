@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *,WebApplication1.TagHelpers
+@model List<ApplicationDetail>
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div>
+            
+            <Citrix-App-Url app-item="@item" app-url="@item.LaunchUrl" window-target="_blank">
+                <Citrix-App-Icon app-item="@item" image-size="64" app-id="@item.Id"></Citrix-App-Icon>
+                <div>@item.Title</div>
+            </Citrix-App-Url>
+        </div>
+    }
+</div>
